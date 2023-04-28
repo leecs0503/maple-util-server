@@ -1,0 +1,7 @@
+{
+    "name": "리스트레인트 링",
+    "item_type": "반지",
+    "thumbnail": "https://avatar.maplestory.nexon.com/ItemIcon/KEODIHHJ.png",
+    "req_level": 110,
+    "seed_level": 3
+}

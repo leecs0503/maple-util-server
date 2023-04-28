@@ -1,0 +1,16 @@
+{
+    "name": "하이네스 어새신보닛",
+    "item_type": "모자",
+    "req_level": 150,
+    "thumbnail": "https://avatar.maplestory.nexon.com/ItemIcon/KEPCIPOB.png",
+    "starforce": 21,
+    "plus_str": 0,
+    "plus_dex": 106,
+    "plus_luk": 106,
+    "plus_hp": 255,
+    "plus_all": 4,
+    "plus_ATK": 69,
+    "plus_MATK": 69,
+    "potential_luk": 18,
+    "potential_all": 9
+}
