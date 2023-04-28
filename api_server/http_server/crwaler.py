@@ -47,11 +47,11 @@ class Crwaler:
         html_content = await self._fetch(session, url)
 
         item_pot_tag = get_tags_from_class(html_content, 'item_pot')[0]
-        li_tags = get_tags_from_class(str(item_pot_tag), 'li')
+        li_tags = item_pot_tag.find_all('li')
 
         paths = []
         for li_tag in li_tags:
-            link_tags = get_tags_from_class(str(li_tag), 'a')
+            link_tags = li_tag.find_all('a')
             if len(link_tags) == 0:
                 paths.append(None)
                 continue
@@ -161,12 +161,11 @@ class Crwaler:
                     prop_value = match[1]
                     if prop_value[0] == '+':
                         val = int(prop_value[1:])
-                    print(prop_name, val)
                     if prop_name in potential_rev_dict:
                         key = potential_rev_dict[prop_name]
                         result[key] = result.get(key, 0) + val
                     else:
-                        print("!!", key)
+                        print("!!", prop_name)
                 continue
             if type == "소울옵션":
                 continue
@@ -189,7 +188,6 @@ class Crwaler:
                 if '(' not in value_str:
                     continue
                 pattern = r'\+(\w+)\s*\((\w+)\s*\+\s*(\w+)\s*\+\s*(\w+)\)'
-                print(value_str)
                 match = re.search(pattern, value_str)
                 key = rev_dict[type]
                 result[key] = int(match.group(3))
@@ -221,7 +219,7 @@ class Crwaler:
         html_content = await self._fetch(session, ranking_url)
 
         rank_table_tag = get_tags_from_class(html_content, 'rank_table')[0]
-        link_tags = get_tags_from_class(str(rank_table_tag), 'a')
+        link_tags = rank_table_tag.find_all('a')
         result = [
             link_tag
             for link_tag in link_tags

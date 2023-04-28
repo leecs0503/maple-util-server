@@ -24,6 +24,9 @@ class HTTPServerRoutingHandler:
 
     async def user_handler(self, request: web.Request):
         user_name = request.match_info['user_name']
-        item_infos = self.crwaler.get_item_infos(user_name=user_name)
-        result = [asdict(item_info) for item_info in item_infos]
+        item_infos = await self.crwaler.get_item_infos(user_name=user_name)
+        result = [
+            asdict(item_info) if item_info else None
+            for item_info in item_infos
+        ]
         return web.Response(body=json.dumps(result), status=HTTPStatus.OK)
