@@ -4,13 +4,12 @@
     "req_level": 200,
     "thumbnail": "https://avatar.maplestory.nexon.com/ItemIcon/KEMBJFJI.png",
     "starforce": 17,
-    "plus_str": 0,
-    "plus_dex": 70,
-    "plus_luk": 70,
-    "plus_hp": 255,
-    "plus_all": 4,
-    "plus_ATK": 130,
-    "plus_MATK": 0,
-    "potential_luk": 18,
-    "potential_all": 9
+    "plus_str": 55,
+    "plus_dex": 0,
+    "plus_luk": 77,
+    "plus_hp": 0,
+    "plus_ATK": 133,
+    "plus_damage": 5,
+    "potential_ATK": 21,
+    "potential_damage": 9
 }

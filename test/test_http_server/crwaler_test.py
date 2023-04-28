@@ -15,10 +15,8 @@ def _load_test_datas():
             test_datas.append(f.read())
         path = str(test_data_dir / f"{name + 1}_result.txt")
         with open(path) as f:
-            x = json.loads(f.read())
-            print(x)
             expected_results.append(
-                ItemInfo(**x)
+                ItemInfo(**json.loads(f.read()))
             )
     return test_datas, expected_results
 
@@ -27,4 +25,7 @@ def test_item_info_of():
     crwaler = Crwaler()
     for test_count, test_data in enumerate(test_datas):
         result = crwaler._item_info_of(test_data)
+        print(expected_results[test_count])
+        print(result)
         assert expected_results[test_count] == result
+        print("Accept")
